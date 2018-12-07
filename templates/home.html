@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+
+{% block title%}To-Do List{% endblock %}
+
+{% block content %}
+<br/>
+<div class="container">
+
+        <h2>My To-Do List</h2>
+        <p>Schedule your activites</p>
+        <form class="form-inline my-2 my-lg-0"   method="POST">
+                {% csrf_token %}
+            <input class="form-control mr-sm-2"  type="text" placeholder="Add New Task" name="activity">
+            <input type = "datetime-local" name = "time" >
+            <button class = "btn btn-primary my-2 my-sm-0" type="submit">Add New Task</button>
+        </form>
+        <br/>
+        {% if act %}
+        <table class="table table-striped">
+            <thead>
+                
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>
+                <th scope="col">Remove</th>
+                </tr>
+            </thead>
+                
+            <tbody>
+                {% for task in act %}      
+                <tr>
+                
+                <th scope="row">{{task.id}}</th>
+                <td>{{task.activity}}</td>
+                <td>{{task.time}}</td>
+                <td>{{task.completed}}</td>
+                <td><a href="{% url 'delete' task.id %}">Delete</a></td>
+                
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+                
+        {% endif %}
+    </div>
+
+<br/>
+ 
+    
+
+{% endblock %}

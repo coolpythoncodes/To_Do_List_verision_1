@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}About{%endblock%}
+
+{%block navbar %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="{% url 'home'%}">To-Do List</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'about'%}">About <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    
+                    
+                  </ul>
+
+                </div>
+              </nav>
+    {% endblock %}
+
+{% block content %}
+
+<div class="align_about">
+<div class="media"  >
+    
+    <div class="media-left" >
+        <a href="#">
+            <img src="img/avatar.jpg" class="media-object img-circle"
+            alt="sample image">
+        </a>
+
+    </div>
+    <div class="media-body">
+        <h4 class="media_heading">Godson Rapture Chijioke</h4>
+        <p>Godson is an aspiring Django developer and this is his first project.</p>
+    </div>
+</div>
+</div>
+{% endblock %}
+
