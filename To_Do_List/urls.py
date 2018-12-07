@@ -17,5 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
+    path('',To_do_app.views.home,name="home"),
+    path('',To_do_app.views.about,name="about"),
     path('admin/', admin.site.urls),
 ]
