@@ -19,6 +19,6 @@ import To_do_app.views
 
 urlpatterns = [
     path('',To_do_app.views.home,name="home"),
-    path('',To_do_app.views.about,name="about"),
+    path('about',To_do_app.views.about,name="about"),
     path('admin/', admin.site.urls),
 ]
