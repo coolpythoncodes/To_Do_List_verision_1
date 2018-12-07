@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.shortcuts import render,redirect
 from .forms import ListForm
 from .models import List
 # Create your views here.
@@ -18,3 +19,8 @@ def home(request):
 
 def about(request):
     return render(request,"about.html",{})
+
+def remove(request,list_id):
+    task = List.objects.get(pk=list_id)
+    task.delete()
+    return redirect("home")

@@ -38,7 +38,7 @@
                 <td>{{task.activity}}</td>
                 <td>{{task.time}}</td>
                 <td>{{task.completed}}</td>
-                <td><a href="{% url 'delete' task.id %}">Delete</a></td>
+                <td><a href="{% url 'remove' task.id  %}">Delete</a></td>
                 
                 </tr>
                 {% endfor %}
