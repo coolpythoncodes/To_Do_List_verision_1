@@ -24,3 +24,8 @@ def remove(request,list_id):
     task = List.objects.get(pk=list_id)
     task.delete()
     return redirect("home")
+
+def clear(request):
+    task = List.objects.all().delete()
+    
+    return redirect("home")
