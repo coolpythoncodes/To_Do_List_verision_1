@@ -22,5 +22,7 @@ urlpatterns = [
     path('about',To_do_app.views.about,name="about"),
     path('remove/<list_id>',To_do_app.views.remove,name="remove"),
     path('clear',To_do_app.views.clear,name="clear"),
+    path('check/<list_id>',To_do_app.views.check,name="check"),
+    path('uncheck/<list_id>',To_do_app.views.uncheck,name="uncheck"),
     path('admin/', admin.site.urls),
 ]

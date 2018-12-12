@@ -9,11 +9,11 @@
 <div class="container">
 
         <h2>My To-Do List</h2>
-        <p>Schedule your activites</p>
+        <p>Schedule {{day}}'s activites</p>
         <form class="form-inline my-2 my-lg-0"   method="POST">
                 {% csrf_token %}
             <input class="form-control mr-sm-2"  type="text" placeholder="Add New Task" name="activity">
-            <input type = "datetime-local" name = "time" >
+            <input type = "time" name = "time" >
             <button class = "btn btn-primary my-2 my-sm-0" type="submit" >Add New Task</button>
         </form>
         <br/>
@@ -33,13 +33,26 @@
             <tbody>
                 {% for task in act %}      
                 <tr>
-                
-                <th scope="row">{{task.id}}</th>
-                <td>{{task.activity}}</td>
-                <td>{{task.time}}</td>
-                <td>{{task.completed}}</td>
-                <td><a href="{% url 'remove' task.id  %}">Delete</a></td>
-                
+                {%if task.completed%}
+                    <th scope="row">{{task.id}}</th>
+                    <td><strike>{{task.activity}}</strike></td>
+                    <td>{{task.time}}</td>
+                    <td>
+                        <a href="{% url 'uncheck' task.id %}"><span class="fas fa-check-square"></span></a>
+                    </td>
+                    <td><a href="{% url 'remove' task.id  %}">Delete</a></td>
+                    {% else %}
+                        <th scope="row">{{task.id}}</th>
+                        <td>{{task.activity}}</td>
+                        <td>{{task.time}}</td>
+                        <td>
+                            <a href="{% url 'check' task.id %}"><span class="far fa-square"></span></a>
+                            
+                            
+                        </td>
+                        <td><a href="{% url 'remove' task.id  %}">Delete</a></td>
+
+                {% endif %}
                 </tr>
                 {% endfor %}
                 
@@ -51,7 +64,7 @@
 
 <br/>
  
-    
+  
 
 {% endblock %}
 
