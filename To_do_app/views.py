@@ -31,10 +31,12 @@ def about(request):
 def remove(request,list_id):
     task = List.objects.get(pk=list_id)
     task.delete()
+    messages.success(request,"task has been removed from list")
     return redirect("home")
 
 def clear(request):
     task = List.objects.all().delete()
+    messages.success(request,"To-Do List has been cleared")
     
     return redirect("home")
 
@@ -42,6 +44,7 @@ def check(request,list_id):
     task = List.objects.get(pk=list_id)
     task.completed = True
     task.save()
+    messages.success(request,"Task completed")
     return redirect("home")
 
 def uncheck(request,list_id):

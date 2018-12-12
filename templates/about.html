@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}About{%endblock%}
 
 {%block navbar %}
@@ -29,7 +30,7 @@
     
     <div class="media-left" >
         <a href="#">
-            <img src="img/avatar.jpg" class="media-object img-circle"
+            <img src="{% static 'rapture.jpg' %}" class="rounded-circle" height="75"
             alt="sample image">
         </a>
 

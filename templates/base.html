@@ -1,35 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Bootstrap iconic fonts-->
+    <!--Font Awesome iconic fonts-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- My CSS-->
+    <link rel="stylesheet" href="{% static 'about.css'%}">
+    <link rel="stylesheet" href="{% static 'strikethrough.css'%}">
+
     <title>{% block title%}To-Do List{% endblock %}</title>
 
-    <!--My CSS style for about page-->
-    <style>
-        .align_about{
-            /*margin-left,margin-right,margin-top, margin-bottom*/
-            margin: 50px;
-            width: 1000px;
-            height: 500px;
-            
-        }
-    </style>
-    <!--My CSS style for loading effect on button-->
-    <style>
-    .loading {
-        margin: 20px;
-    }
-    button {
-        outline: none !important;
-    }
-    </style>
     <!--My CSS style success messages-->
     <style type="text/css">
         .message{

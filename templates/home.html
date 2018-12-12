@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 
 {% block title%}To-Do List{% endblock %}
@@ -35,7 +35,7 @@
                 <tr>
                 {%if task.completed%}
                     <th scope="row">{{task.id}}</th>
-                    <td><strike>{{task.activity}}</strike></td>
+                    <td class="striker">{{task.activity}}</td>
                     <td>{{task.time}}</td>
                     <td>
                         <a href="{% url 'uncheck' task.id %}"><span class="fas fa-check-square"></span></a>
